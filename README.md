@@ -12,7 +12,7 @@ dein.vim をインストールします。
 
 ```
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-$ sh installer.sh ~/.dein.vim
+$ sh installer.sh ~/.local/share/dein
 ```
 
 既存の`.vimrc`を置き換えます。
