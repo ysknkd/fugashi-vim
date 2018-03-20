@@ -29,34 +29,34 @@ endif
 set runtimepath^=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state(expand('~/.local/share/dein'))
-  call dein#begin(expand('~/.local/share/dein'))
+call dein#begin(expand('~/.local/share/dein'))
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('Shougo/dein.vim')
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
 
-  " Add or remove your plugins here:
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('pangloss/vim-javascript')
+" Add or remove your plugins here:
+call dein#add('scrooloose/nerdtree')
+call dein#add('pangloss/vim-javascript')
+call dein#add('stephpy/vim-yaml')
+call dein#add('kopischke/vim-stay')
 
-  " Required:
-  call dein#end()
-  call dein#save_state()
+" Required:
+call dein#end()
 
-  " Required:
-  filetype plugin indent on
+" Required:
+filetype plugin indent on
 
-  " If you want to install not installed plugins on startup.
-  if dein#check_install()
-    call dein#install()
-  endif
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
 endif
 "End dein Scripts-------------------------
 
 "---- begin for plugin settings ----
 map <C-e> :NERDTreeToggle<CR>
 
+set viewoptions=cursor,folds,slash,unix
 "----- end for plugin settings -----
 
 

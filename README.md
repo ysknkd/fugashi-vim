@@ -23,6 +23,12 @@ $ mv ~/.vimrc ~/.vimrc_old
 $ ln -s ~/.fugashi-vim/.vimrc ~/.vimrc
 ```
 
+`.vim` ディレクトリが存在しない場合は作成します。
+
+```
+$ mkdir ~/.vim
+```
+
 vim を起動すると、プラグインのインストールが行われます。
 
 ```
