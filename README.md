@@ -18,7 +18,7 @@ $ sh installer.sh ~/.local/share/dein
 既存の`.vimrc`を置き換えます。
 
 ```
-$ git clone https://ysknkd@bitbucket.org/ysknkd/fugashi-vim.git ~/.fugashi-vim
+$ git clone https://github.com/ysknkd/fugashi-vim.git ~/.fugashi-vim
 $ mv ~/.vimrc ~/.vimrc_old
 $ ln -s ~/.fugashi-vim/.vimrc ~/.vimrc
 ```
