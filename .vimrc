@@ -40,6 +40,7 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('pangloss/vim-javascript')
 call dein#add('stephpy/vim-yaml')
 call dein#add('kopischke/vim-stay')
+call dein#add('tomasr/molokai')
 
 " Required:
 call dein#end()
@@ -57,6 +58,7 @@ endif
 map <C-e> :NERDTreeToggle<CR>
 
 set viewoptions=cursor,folds,slash,unix
+colorscheme molokai
 "----- end for plugin settings -----
 
 
