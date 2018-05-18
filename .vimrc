@@ -41,6 +41,8 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('stephpy/vim-yaml')
 call dein#add('kopischke/vim-stay')
 call dein#add('tomasr/molokai')
+call dein#add('tpope/vim-pathogen')
+call dein#add('vim-syntastic/syntastic')
 
 " Required:
 call dein#end()
@@ -58,7 +60,23 @@ endif
 map <C-e> :NERDTreeToggle<CR>
 
 set viewoptions=cursor,folds,slash,unix
-colorscheme molokai
-"----- end for plugin settings -----
 
+colorscheme molokai
+
+" Syntastic
+execute pathogen#infect()
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+if matchstr(system('yamllint --version'), '^yamllint\s[0-9.]*') != ''
+  let g:syntastic_yaml_checkers = ['yamllint']
+endif
+"----- end for plugin settings -----
 
