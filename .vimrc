@@ -20,6 +20,9 @@ if has('persistent_undo')
   augroup END
 endif
 
+" clipboard
+set clipboard+=unnamed
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
