@@ -46,6 +46,7 @@ call dein#add('kopischke/vim-stay')
 call dein#add('tomasr/molokai')
 call dein#add('tpope/vim-pathogen')
 call dein#add('vim-syntastic/syntastic')
+call dein#add('kballard/vim-swift')
 
 " Required:
 call dein#end()
