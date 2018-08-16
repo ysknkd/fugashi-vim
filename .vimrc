@@ -61,13 +61,16 @@ endif
 "End dein Scripts-------------------------
 
 "---- begin for plugin settings ----
+" nerdtree
 map <C-e> :NERDTreeToggle<CR>
 
+" vim-stay
 set viewoptions=cursor,folds,slash,unix
 
+" molokai
 colorscheme molokai
 
-" Syntastic
+" syntastic
 execute pathogen#infect()
 
 set statusline+=%#warningmsg#
