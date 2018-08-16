@@ -50,6 +50,7 @@ call dein#add('tomasr/molokai')
 call dein#add('tpope/vim-pathogen')
 call dein#add('vim-syntastic/syntastic')
 call dein#add('posva/vim-vue')
+call dein#add('tpope/vim-markdown')
 
 " Required:
 call dein#end()
@@ -88,5 +89,9 @@ let g:syntastic_check_on_wq = 0
 if matchstr(system('yamllint --version'), '^yamllint\s[0-9.]*') != ''
   let g:syntastic_yaml_checkers = ['yamllint']
 endif
+
+" vim-markdown
+let g:markdown_fenced_languages = ['c', 'js=javascript', 'json', 'xml']
+
 "----- end for plugin settings -----
 
