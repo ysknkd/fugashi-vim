@@ -8,6 +8,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" wrap
+set nowrap
+
 " encoding
 set encoding=utf-8
 
