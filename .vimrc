@@ -8,6 +8,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" wrap
+set nowrap
+
 " encoding
 set encoding=utf-8
 
@@ -61,13 +64,16 @@ endif
 "End dein Scripts-------------------------
 
 "---- begin for plugin settings ----
+" nerdtree
 map <C-e> :NERDTreeToggle<CR>
 
+" vim-stay
 set viewoptions=cursor,folds,slash,unix
 
+" molokai
 colorscheme molokai
 
-" Syntastic
+" syntastic
 execute pathogen#infect()
 
 set statusline+=%#warningmsg#
