@@ -51,6 +51,7 @@ call dein#add('tpope/vim-pathogen')
 call dein#add('vim-syntastic/syntastic')
 call dein#add('posva/vim-vue')
 call dein#add('tpope/vim-markdown')
+call dein#add('airblade/vim-gitgutter')
 
 " Required:
 call dein#end()
