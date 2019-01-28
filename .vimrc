@@ -35,34 +35,36 @@ endif
 set runtimepath^=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('~/.local/share/dein'))
+if dein#load_state('~/.local/share/dein')
+  call dein#begin('~/.local/share/dein')
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
 
-" Add or remove your plugins here:
-call dein#add('scrooloose/nerdtree')
-call dein#add('pangloss/vim-javascript')
-call dein#add('stephpy/vim-yaml')
-call dein#add('kopischke/vim-stay')
-call dein#add('tomasr/molokai')
-call dein#add('tpope/vim-pathogen')
-call dein#add('vim-syntastic/syntastic')
-call dein#add('posva/vim-vue')
-call dein#add('tpope/vim-markdown')
-call dein#add('airblade/vim-gitgutter')
+  " Add or remove your plugins here:
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('stephpy/vim-yaml')
+  call dein#add('kopischke/vim-stay')
+  call dein#add('tomasr/molokai')
+  call dein#add('tpope/vim-pathogen')
+  call dein#add('vim-syntastic/syntastic')
+  call dein#add('posva/vim-vue')
+  call dein#add('tpope/vim-markdown')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('wakatime/vim-wakatime')
 
-" Required:
-call dein#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
 "End dein Scripts-------------------------
 
 "---- begin for plugin settings ----
