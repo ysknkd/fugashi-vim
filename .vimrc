@@ -54,6 +54,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('posva/vim-vue')
   call dein#add('tpope/vim-markdown')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('vim-airline/vim-airline')
 
   " Required:
   call dein#end()
