@@ -54,7 +54,6 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('posva/vim-vue')
   call dein#add('tpope/vim-markdown')
   call dein#add('airblade/vim-gitgutter')
-  call dein#add('wakatime/vim-wakatime')
 
   " Required:
   call dein#end()
