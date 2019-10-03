@@ -26,6 +26,10 @@ endif
 " clipboard
 set clipboard+=unnamed
 
+" terminal mode keymap
+" change command mode
+tnoremap <silent> <ESC> <C-\><C-n>
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
