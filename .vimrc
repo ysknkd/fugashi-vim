@@ -60,6 +60,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('tpope/vim-markdown')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('vim-airline/vim-airline')
+  call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
 
   " Required:
   call dein#end()
