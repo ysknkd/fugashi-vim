@@ -53,7 +53,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('stephpy/vim-yaml')
   call dein#add('kopischke/vim-stay')
-  call dein#add('tomasr/molokai')
+  call dein#add('patstockwell/vim-monokai-tasty')
   call dein#add('tpope/vim-pathogen')
   call dein#add('vim-syntastic/syntastic')
   call dein#add('posva/vim-vue')
@@ -61,6 +61,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('vim-airline/vim-airline')
   call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
+  call dein#add('ryanoasis/vim-devicons')
 
   " Required:
   call dein#end()
@@ -81,7 +82,7 @@ map <C-e> :NERDTreeToggle<CR>
 set viewoptions=cursor,folds,slash,unix
 
 " molokai
-colorscheme molokai
+colorscheme vim-monokai-tasty
 
 " syntastic
 execute pathogen#infect()
