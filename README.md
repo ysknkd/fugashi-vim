@@ -4,14 +4,14 @@ This is my .vimrc. Use dein.vim for plugin manager.
   
 ## Prerequisite
 
-* VIM version 8.x or above.
+* neovim
 
-e.g.) Install VIM version 8.x in Ubuntu 16.04.
+e.g.) Install neovim in Ubuntu 18.04.
 
 ```console
-$ sudo add-apt-repository ppa:jonathonf/vim
+$ sudo add-apt-repository ppa:neovim-ppa/stable
 $ sudo apt update
-$ sudo apt install vim
+$ sudo apt install neovim
 ```
 
 ## Installation
@@ -20,6 +20,11 @@ Install dein.vim and fugashi-vim. Installer deploy dein.vim to `~/.local/share/d
 
 ```console
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ysknkd/fugashi-vim/master/bin/installer.sh)"
+```
+
+```console
+$ mkdir -p ~/.config/nvim
+$ ln -s ~/.fugashi-vim/.vimrc ~/.config/nvim/init.vim
 ```
 
 ### Manual installation
