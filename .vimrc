@@ -5,8 +5,8 @@ set nu
 
 " tab
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " wrap
 set nowrap
@@ -76,7 +76,7 @@ syntax enable
 
 "---- begin for plugin settings ----
 " nerdtree
-map <C-e> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeToggle %<CR>
 
 " vim-stay
 set viewoptions=cursor,folds,slash,unix
