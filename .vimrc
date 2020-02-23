@@ -25,6 +25,15 @@ endif
 
 " clipboard
 set clipboard+=unnamed
+" WSL yank support
+" https://vi.stackexchange.com/questions/15182/copying-from-vim-to-ubuntu-bash-on-windows/15190#15190
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+  augroup END
+endif
 
 " terminal mode keymap
 " change command mode
