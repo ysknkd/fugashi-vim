@@ -27,13 +27,14 @@ $ mkdir -p ~/.config/nvim
 $ ln -s ~/.fugashi-vim/.vimrc ~/.config/nvim/init.vim
 ```
 
+`:call dein#install()` in neovim. 
+
 ### Manual installation
 
-vimのプラグインマネージャとしてdein.vimを使っていますので、dein.vimをインストールしてください。
+dein.vim をインストールします。
 
 * [dein.vim - Quick start](https://github.com/Shougo/dein.vim#quick-start)
 
-dein.vim をインストールします。
 
 ```console
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
@@ -52,12 +53,6 @@ $ ln -s ~/.fugashi-vim/.vimrc ~/.vimrc
 
 ```console
 $ mkdir ~/.vim
-```
-
-vim を起動すると、プラグインのインストールが行われます。
-
-```console
-$ vim
 ```
 
 ---
