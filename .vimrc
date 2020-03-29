@@ -35,6 +35,10 @@ if executable(s:clip)
   augroup END
 endif
 
+" normal + visual mode keymap
+" this keybind for lily58 keyboard
+noremap # $
+
 " terminal mode keymap
 " change command mode
 tnoremap <silent> <ESC> <C-\><C-n>
