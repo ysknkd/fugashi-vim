@@ -75,6 +75,7 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
   call dein#add('ryanoasis/vim-devicons')
+  call dein#add('tpope/vim-sleuth')
 
   " Required:
   call dein#end()
@@ -114,6 +115,12 @@ let g:syntastic_mode_map = { 'mode': 'active',
 if matchstr(system('yamllint --version'), '^yamllint\s[0-9.]*') != ''
   let g:syntastic_yaml_checkers = ['yamllint']
 endif
+
+" python
+let g:syntastic_python_checkers = ['flake8']
+
+" coc-java
+autocmd FileType java nnoremap <Space>i :CocCommand java.action.organizeImports<CR>
 
 " vim-markdown
 let g:markdown_fenced_languages = ['c', 'js=javascript', 'json', 'xml']
