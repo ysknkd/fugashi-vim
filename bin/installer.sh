@@ -10,14 +10,11 @@ type git || {
   echo 'Please install git, before installing fugashi-vim.'
   exit 1
 }
-echo ''
-
-REQ_VERSION=8
-VIM_VERSION=$(vim --version | grep "^VIM" | sed -E "s/^VIM.*\s([0-9])\.[0-9.]+\s.*/\1/g")
-if [ ${VIM_VERSION} -lt ${REQ_VERSION} ]; then
-  echo 'Please install vim version 8.'
+type nvim || {
+  echo 'Please install neo-vim, before installing fugashi-vim.'
   exit 1
-fi
+}
+echo ''
 
 echo '-------- Download dein.vim'
 
@@ -40,13 +37,18 @@ if [ -e "${HOME}/.vimrc" ]; then
   mv ${HOME}/.vimrc ${HOME}/.vimrc.bak
 fi
 
-echo 'Create a link to fugashi-vim `.vimrc`'
-ln -s ${HOME}/.fugashi-vim/.vimrc ${HOME}/.vimrc
-
-if [ ! -d "${HOME}/.vim" ]; then
-  echo 'Create a `.vim` directory'
-  mkdir ${HOME}/.vim
+if [ ! -d "${HOME}/.config/nvim" ]; then
+  echo 'Create a `.config/nvim` directory'
+  mkdir -p ${HOME}/.config/nvim
 fi
+
+if [ -e "${HOME}/.config/nvim/init.vim" ]; then
+  echo 'Rename a `init.vim` to `init.vim.bak`'
+  mv ${HOME}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim.bak
+fi
+
+echo 'Create a link to fugashi-vim `.vimrc`'
+ln -s ${HOME}/.fugashi-vim/.vimrc ${HOME}/.config/nvim/init.vim
 
 echo ''
 echo '----------------------------------'

@@ -6,25 +6,12 @@ This is my .vimrc. Use dein.vim for plugin manager.
 
 * neovim
 
-e.g.) Install neovim in Ubuntu 18.04.
-
-```console
-$ sudo add-apt-repository ppa:neovim-ppa/stable
-$ sudo apt update
-$ sudo apt install neovim
-```
-
 ## Installation
 
 Install dein.vim and fugashi-vim. Installer deploy dein.vim to `~/.local/share/dein`, fugashi-vim to `~/.fugashi-vim` .
 
 ```console
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ysknkd/fugashi-vim/master/bin/installer.sh)"
-```
-
-```console
-$ mkdir -p ~/.config/nvim
-$ ln -s ~/.fugashi-vim/.vimrc ~/.config/nvim/init.vim
 ```
 
 `:call dein#install()` in neovim. 
@@ -34,7 +21,6 @@ $ ln -s ~/.fugashi-vim/.vimrc ~/.config/nvim/init.vim
 dein.vim をインストールします。
 
 * [dein.vim - Quick start](https://github.com/Shougo/dein.vim#quick-start)
-
 
 ```console
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
@@ -54,8 +40,4 @@ $ ln -s ~/.fugashi-vim/.vimrc ~/.vimrc
 ```console
 $ mkdir ~/.vim
 ```
-
----
-
-以上
 
