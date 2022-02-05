@@ -58,7 +58,23 @@ if dein#load_state('~/.local/share/dein')
   " Let dein manage dein
   " Required:
   call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
+
+  " ddc.vim settings
+  " base
+  call dein#add('Shougo/ddc.vim')
+  call dein#add('vim-denops/denops.vim')
+  " sources
+  call dein#add('Shougo/ddc-around')
+  call dein#add('Shougo/ddc-nextword')
+  call dein#add('Shougo/ddc-nvim-lsp')
+  " 
+  call dein#add('Shougo/ddc-matcher_head')
+  call dein#add('Shougo/ddc-sorter_rank')
+  call dein#add('matsui54/denops-popup-preview.vim')
+  call dein#add('ray-x/lsp_signature.nvim')
+  " lsp installer
+  call dein#add('neovim/nvim-lspconfig')
+  call dein#add('williamboman/nvim-lsp-installer')
 
   " Add or remove your plugins here:
   call dein#add('scrooloose/nerdtree')
@@ -73,13 +89,13 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('tpope/vim-markdown')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('vim-airline/vim-airline')
-  call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
   call dein#add('ryanoasis/vim-devicons')
   call dein#add('tpope/vim-sleuth')
 
   " Required:
   call dein#end()
   call dein#save_state()
+
 endif
 
 " Required:
@@ -119,11 +135,27 @@ endif
 " python
 let g:syntastic_python_checkers = ['flake8']
 
-" coc-java
-autocmd FileType java nnoremap <Space>i :CocCommand java.action.organizeImports<CR>
-
 " vim-markdown
 let g:markdown_fenced_languages = ['c', 'js=javascript', 'json', 'xml']
 
+" lsp
+:lua require('nvim-lsp')
+call popup_preview#enable()
+
+" ddc
+call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'nextword'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'nvim-lsp': {
+      \   'mark': 'lsp',
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+      \ },
+      \ 'around'  : {'mark': 'ar'},
+      \ 'nextword': {'mark': 'nw'},
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank']},
+      \ })
+
+call ddc#enable()
 "----- end for plugin settings -----
 
