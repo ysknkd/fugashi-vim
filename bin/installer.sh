@@ -50,6 +50,9 @@ fi
 echo 'Create a link to fugashi-vim `.vimrc`'
 ln -s ${HOME}/.fugashi-vim/.vimrc ${HOME}/.config/nvim/init.vim
 
+echo 'Create a link to fugashi-vim `lua`'
+ln -s ${HOME}/.fugashi-vim/lua ${HOME}/.config/nvim/lua
+
 echo ''
 echo '----------------------------------'
 echo '    Complete fugashi-vim setup'
