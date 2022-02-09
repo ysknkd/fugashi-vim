@@ -139,6 +139,7 @@ let g:markdown_fenced_languages = ['c', 'js=javascript', 'json', 'xml']
 
 " lsp
 :lua require('nvim-lsp')
+set completeopt=menuone
 call popup_preview#enable()
 
 " ddc
