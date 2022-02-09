@@ -139,7 +139,7 @@ endif
 let g:syntastic_python_checkers = ['flake8']
 
 " vim-markdown
-let g:markdown_fenced_languages = ['c', 'js=javascript', 'json', 'xml']
+let g:markdown_fenced_languages = ['c', 'go', 'js=javascript', 'json', 'xml']
 
 " lsp
 :lua require('nvim-lsp')
