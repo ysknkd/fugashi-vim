@@ -65,7 +65,6 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('vim-denops/denops.vim')
   " sources
   call dein#add('Shougo/ddc-around')
-  call dein#add('Shougo/ddc-nextword')
   call dein#add('Shougo/ddc-nvim-lsp')
   " 
   call dein#add('Shougo/ddc-matcher_head')
@@ -143,14 +142,13 @@ let g:markdown_fenced_languages = ['c', 'js=javascript', 'json', 'xml']
 call popup_preview#enable()
 
 " ddc
-call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'nextword'])
+call ddc#custom#patch_global('sources', ['nvim-lsp', 'around'])
 call ddc#custom#patch_global('sourceOptions', {
       \ 'nvim-lsp': {
       \   'mark': 'lsp',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \ },
       \ 'around'  : {'mark': 'ar'},
-      \ 'nextword': {'mark': 'nw'},
       \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank']},
