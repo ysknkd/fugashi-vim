@@ -1,5 +1,9 @@
 syntax on
 
+" color
+set termguicolors
+set pumblend=18
+
 " basic
 set nu
 
