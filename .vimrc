@@ -47,6 +47,17 @@ noremap # $
 " change command mode
 tnoremap <silent> <ESC> <C-\><C-n>
 
+" golang
+" fmt
+function! _gofmt()
+  exe ":!go fmt %"
+  exe ":e!"
+endfunction
+augroup gofmt
+  autocmd!
+  autocmd BufWritePost *.go silent :call _gofmt()
+augroup END
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
