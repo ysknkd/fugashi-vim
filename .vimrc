@@ -107,6 +107,11 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('ryanoasis/vim-devicons')
   call dein#add('tpope/vim-sleuth')
+  call dein#add('nvim-lua/plenary.nvim')
+  call dein#add('nvim-telescope/telescope.nvim', { 'rev': '0.1.x' })
+  call dein#add('nvim-treesitter/nvim-treesitter-context')
+  call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
+        \ 'build': 'sh -c "cd app && npx --yes yarn install"' })
 
   " Required:
   call dein#end()
@@ -134,6 +139,16 @@ let g:syntastic_python_checkers = ['flake8']
 
 " vim-markdown
 let g:markdown_fenced_languages = ['c', 'go', 'js=javascript', 'json', 'xml']
+
+" telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" set default theme (dark or light)
+" By default the theme is defined according to the preferences of the system
+let g:mkdp_theme = 'light'
 
 " lsp
 :lua require('nvim-lsp')
