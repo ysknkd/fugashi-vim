@@ -20,7 +20,7 @@ echo '-------- Download dein.vim'
 
 if [ ! -d "${HOME}/.local/share/dein" ]; then
   echo 'Install dein.vim'
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" -c "${HOME}/.local/share/dein"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
   echo 'Done.'
 fi
 
