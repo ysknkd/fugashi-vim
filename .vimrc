@@ -81,14 +81,14 @@ if dein#load_state('~/.local/share/dein')
   " sources
   call dein#add('Shougo/ddc-ui-native')
   call dein#add('Shougo/ddc-around')
-  call dein#add('Shougo/ddc-nvim-lsp')
-  call dein#add('Shougo/ddc-source-nvim-lsp')
+  call dein#add('Shougo/ddc-source-lsp')
   " 
   call dein#add('Shougo/ddc-matcher_head')
   call dein#add('Shougo/ddc-sorter_rank')
   call dein#add('matsui54/denops-popup-preview.vim')
+  call dein#add('matsui54/denops-signature_help')
   call dein#add('ray-x/lsp_signature.nvim')
-  " lsp installer
+  " lsp configure and installer
   call dein#add('neovim/nvim-lspconfig')
   call dein#add('williamboman/mason.nvim')
   call dein#add('williamboman/mason-lspconfig.nvim')
@@ -107,7 +107,6 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('ryanoasis/vim-devicons')
   call dein#add('tpope/vim-sleuth')
-  call dein#add('github/copilot.vim')
 
   " Required:
   call dein#end()
@@ -138,14 +137,12 @@ let g:markdown_fenced_languages = ['c', 'go', 'js=javascript', 'json', 'xml']
 
 " lsp
 :lua require('nvim-lsp')
-set completeopt=menuone
-call popup_preview#enable()
 
 " ddc
 call ddc#custom#patch_global('ui', 'native')
-call ddc#custom#patch_global('sources', ['nvim-lsp', 'around'])
+call ddc#custom#patch_global('sources', ['lsp', 'around'])
 call ddc#custom#patch_global('sourceOptions', #{
-      \   nvim-lsp: #{
+      \   lsp: #{
       \     mark: 'lsp',
       \     forceCompletionPattern: '\.\w*|:\w*|->\w*',
       \   },
@@ -158,15 +155,14 @@ call ddc#custom#patch_global('sourceOptions', #{
       \   },
       \ })
 call ddc#custom#patch_global('sourceParams', #{
-      \   nvim-lsp: #{
-      \     snippetEngine: denops#callback#register({
-      \           body -> vsnip#anonymous(body)
-      \     }),
+      \   lsp: #{
       \     enableResolveItem: v:true,
       \     enableAdditionalTextEdit: v:true,
       \   }
       \ })
-
 call ddc#enable()
+
+call popup_preview#enable()
+call signature_help#enable()
 "----- end for plugin settings -----
 
